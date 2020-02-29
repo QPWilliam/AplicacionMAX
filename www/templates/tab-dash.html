@@ -1,0 +1,16 @@
+<ion-view view-title="Dashboard">
+  <ion-content>
+
+      <ion-item ng-repeat="categoria in categorias"  href="#/tab/dash/{{categoria.id}}">
+        <div class="cards-list">
+          <div class="card 1">
+            <div class="card_image"> <img ng-src="{{categoria.img}}" /> </div>
+            <div class="card_title title-white">
+              <p class="ng-binding">{{categoria.name}}</p>
+            </div>
+          </div>
+        </div>
+      </ion-item>
+
+  </ion-content>
+</ion-view>
