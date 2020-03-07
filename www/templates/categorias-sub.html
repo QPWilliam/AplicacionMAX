@@ -1,8 +1,11 @@
 <<ion-view view-title="{{categoria.name}}">
   <ion-content class="padding">
 
-    <h1 class="subcTitle">Televisores</h1>
-    <div ng-repeat="subcategoria in subcategoriasTV">
+  	<div ng-repeat="titulo in TitulosSubcategorias | filter: seleccion">
+  		<h1 class="subcTitle" style="padding-bottom:25%">{{titulo.TituloSubcategoria0}}</h1>
+  	</div>
+    
+    <div ng-repeat="subcategoria in subcategorias | filter: seleccion">
       <div class="buttonAnimated">{{subcategoria.NombreProducto}}</div>
     </div>
 

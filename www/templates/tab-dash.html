@@ -1,7 +1,7 @@
 <ion-view view-title="Dashboard">
   <ion-content>
 
-      <ion-item ng-repeat="categoria in categorias"  href="#/tab/dash/{{categoria.id}}">
+      <ion-item ng-repeat="categoria in categorias"  ng-click="patoxd(categoria.id)">
         <div class="cards-list">
           <div class="card 1">
             <div class="card_image"> <img ng-src="{{categoria.img}}" /> </div>

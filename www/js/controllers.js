@@ -42,23 +42,36 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('DashCtrl', function($scope, Categorias) {
+.controller('DashCtrl', function($scope,$state,$rootScope, Categorias) {
   $scope.categorias = Categorias.all();
   $scope.remove = function(chat) {
     Categorias.remove(categoria);
   };
+
+  $scope.patoxd = function(x){
+    $rootScope.seleccion = x;
+    $state.go('tab.subcategorias')  
+  }
+
 })
 
-.controller('SubcategoriasCtrl', function($scope, $stateParams, Categorias) {
-  $scope.categoria = Categorias.get($stateParams.categoriaId);
+.controller('SubcategoriasCtrl', function($scope, $rootScope,$stateParams, Categorias) {
+    
+  $rootScope.TitulosSubcategorias = [
+    {TituloSubcategoria0: "Televisores", id:0},
+    {TituloSubcategoria1: "Video y Audio para TV", id:0},
+    {TituloSubcategoria2: "Accesorios", id:0},
+  ]
 
-  $scope.subcategoriasTV = [
-    {NombreProducto: "4K / UHD"},
-    {NombreProducto: "OLED"},
-    {NombreProducto: "QLED 4K / 8K"},
-    {NombreProducto: "NanoCell"},
-    {NombreProducto: "Pantalla Grande"},
-    {NombreProducto: "Todas las TVs"}
+  $rootScope.subcategorias = [
+    {NombreProducto: "4K / UHD", id:0},
+    {NombreProducto: "OLED",id:0},
+    {NombreProducto: "QLED 4K / 8K",id:0},
+    {NombreProducto: "NanoCell",id:0},
+    {NombreProducto: "Pantalla Grande",id:0},
+    {NombreProducto: "Todas las TVs",id:0},
+    //Celulares
+    {NombreProducto: "4K / UHD", id:1},
   ]
 
 })
